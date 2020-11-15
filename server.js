@@ -11,18 +11,26 @@ const auth = basicAuth({
   },
 });
 
+const loginPage = "unauthenticated-app";
+const privatePage = "authenticated-app";
+
 const PORT = process.env.PORT || 5000;
 
 app.use(cookieParser("82e4e438a0705fabf61f9854e3b575af"));
 
-app.use(express.static(path.join(__dirname, "/client/build")));
+app.use(express.static(path.join(__dirname, `/${loginPage}/build`)));
 
+//This is so that we can see in the terminal to which port
+//the app is listening to, in this case it's 5000.
+//Go to http://localhost:5000/ in your browser
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));
 
+//Here we're serving the login page when user goes to http://localhost:5000/
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "/client/build/index.html"));
+  res.sendFile(path.join(__dirname, `/${loginPage}/build/index.html`));
 });
 
+//This gets called upon login in the client
 app.get("/authenticate", auth, (req, res) => {
   const options = {
     httpOnly: true,
@@ -40,9 +48,9 @@ app.get("/clear-cookie", (req, res) => {
 
 app.get("/protected", (req, res) => {
   if (req.signedCookies.name === "admin") {
-    app.use(express.static(path.join(__dirname, "/private/build")));
-    res.sendFile(path.join(__dirname, "/private/build/index.html"));
+    app.use(express.static(path.join(__dirname, `/${privatePage}/build`)));
+    res.sendFile(path.join(__dirname, `/${privatePage}/build/index.html`));
   } else {
-    res.sendFile(path.join(__dirname, "/client/build/index.html"));
+    res.sendFile(path.join(__dirname, `/${loginPage}/build/index.html`));
   }
 });
