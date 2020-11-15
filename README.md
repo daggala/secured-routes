@@ -10,22 +10,21 @@ In this example we have two different React apps, the other containing the login
 
 In the terminal:
 
-`git clone git@github.com:daggala`
-`cd secured-routes`
-`npm i`
-`cd login-page`
-`npm i`
-`npm run build`
-`cd ..`
-`cd private`
-`npm i`
-`npm run build`
-`cd ..`
-`npm run start`
+````
+git clone git@github.com:daggala
+cd secured-routes
+npm i
+cd unauthenticated-app
+npm i
+npm run build
+cd ..
+cd authenticated-app
+npm i
+npm run build
+cd ..
+npm run start
 
-or to run all in one command you can copy paste this into your terminal:
-
-`git clone git@github.com:daggala; cd secured routes; npm i; cd login-page; npm i; npm run build; cd ..; cd private; npm i; npm run build; cd ..; npm run start`
+```
 
 open up your browser at `http://localhost:5000/`
 
@@ -35,3 +34,4 @@ username: 'admin'
 password: '123'
 
 When we hit the login button we request the server to serve the other SPA that includes the private authenticated part of our application.
+````
