@@ -10,7 +10,7 @@ In this example we have two different React apps, the other containing the login
 
 In the terminal:
 
-````
+```
 git clone git@github.com:daggala
 cd secured-routes
 npm i
@@ -34,4 +34,3 @@ username: 'admin'
 password: '123'
 
 When we hit the login button we request the server to serve the other SPA that includes the private authenticated part of our application.
-````
