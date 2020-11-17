@@ -42,15 +42,15 @@ app.get("/authenticate", auth, (req, res) => {
   }
 });
 
+//This gets called upon logout
 app.get("/clear-cookie", (req, res) => {
   res.clearCookie("name").end();
 });
 
+//This gets called upon login when we're on /protected
 app.get("/protected", (req, res) => {
   if (req.signedCookies.name === "admin") {
     app.use(express.static(path.join(__dirname, `/${privatePage}/build`)));
     res.sendFile(path.join(__dirname, `/${privatePage}/build/index.html`));
-  } else {
-    res.sendFile(path.join(__dirname, `/${loginPage}/build/index.html`));
   }
 });
