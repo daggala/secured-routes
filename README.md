@@ -4,9 +4,9 @@
 
 This is an example on how to protect the private parts of a website by serving the public part and the private part separately. This example belongs to this blog article: https://www.daggala.com/truly-secured-react-routes/
 
-In authenticated-app we have the priavet part of the app, after login.
-In unauthenticated-app we have the login page
-In server.js we serve the pages to the browser.
+- In authenticated-app we have the priavet part of the app, after login.
+- In unauthenticated-app we have the login page
+- In server.js we serve the pages to the browser.
 
 _Disclaimer: In my example those react apps are made using create-react app (CRA). It's overkill for this example but it's just to demonstrate. This app is not a fully functioning app, just an example to focus on exactly one thing, to make it impossible to access the the private components._
 
@@ -15,7 +15,7 @@ _Disclaimer: In my example those react apps are made using create-react app (CRA
 In the terminal:
 
 ```
-git clone git@github.com:daggala
+git clone git@github.com:daggala/secured-routes.git
 cd secured-routes
 npm i
 cd unauthenticated-app
