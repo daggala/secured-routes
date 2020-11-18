@@ -16,7 +16,7 @@ In the terminal
 
 ```javascript
 //clone the project:
-git clone git@github.com:daggala/secured-routes.git
+git clone https://github.com/daggala/secured-routes.git
 
 //build the project
 cd secured-routes
