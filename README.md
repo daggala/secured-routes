@@ -2,7 +2,7 @@
 
 ## About
 
-This is an example on how to protect the private parts of a website by serving the public part and the private part separately. This example belongs to this blog article: https://www.daggala.com/truly-secured-react-routes/
+This is an example on how to protect the private parts of a website by serving the public part and the private part separately. This example belongs to this blog article: https://www.daggala.com/truly-protected-react-routes/
 
 - In authenticated-app we have the priavet part of the app, after login.
 - In unauthenticated-app we have the login page
@@ -12,10 +12,12 @@ _Disclaimer: In my example those react apps are made using create-react app (CRA
 
 ## How to run this project?
 
-In the terminal:
+In the terminal
 
 ```
+//clone the project:
 git clone git@github.com:daggala/secured-routes.git
+//build the project
 cd secured-routes
 npm i
 cd unauthenticated-app
@@ -26,8 +28,8 @@ cd authenticated-app
 npm i
 npm run build
 cd ..
+//then finally run the project in the root folder
 npm run start
-
 ```
 
 open up your browser at `http://localhost:5000/`
