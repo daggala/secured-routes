@@ -14,9 +14,10 @@ _Disclaimer: In my example those react apps are made using create-react app (CRA
 
 In the terminal
 
-```
+```javascript
 //clone the project:
 git clone git@github.com:daggala/secured-routes.git
+
 //build the project
 cd secured-routes
 npm i
@@ -28,6 +29,7 @@ cd authenticated-app
 npm i
 npm run build
 cd ..
+
 //then finally run the project in the root folder
 npm run start
 ```
